@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaRegEdit } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const Result = ({ task, setTask, handleDeletTodo }) => {
   const [editTodo, setEditTodo] = useState("");
@@ -16,6 +17,7 @@ const Result = ({ task, setTask, handleDeletTodo }) => {
     setTask(editedTask);
     setEditMode(null);
     setEditTodo("");
+    toast.success("Task edited saved");
   };
 
   const toggleCompletion = (id) => {
@@ -26,7 +28,11 @@ const Result = ({ task, setTask, handleDeletTodo }) => {
       return item;
     });
     setTask(updatedLineThrough);
+    updatedLineThrough.find((item) => item.id === id).completed
+      ? toast.success("Task marked completed")
+      : toast.error("Task marked incomplete");
   };
+
   return (
     <div className="mt-8">
       {task.length === 0 ? (
@@ -89,6 +95,7 @@ const Result = ({ task, setTask, handleDeletTodo }) => {
                         onClick={() => {
                           setEditMode(item.id);
                           setEditTodo(item.todo);
+                          toast.success("Editing task...");
                         }}
                       />
                       <RiDeleteBin5Line
