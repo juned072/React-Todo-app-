@@ -1,21 +1,19 @@
-
-```
 # Todo App 📝
 
-This is a simple todo application built with React. It allows users to add, edit, and delete todo items. Todo items are stored locally, so they persist even if the user refreshes the page.
+This is a simple todo application built with React. It allows users to add, edit, and delete todo items. Todo items are stored locally using browser's local storage, so they persist even if the user refreshes the page.
 
 ## Features
 
-- Add new todo items
-- Edit existing todo items
-- Delete todo items
-- Mark todo items as completed
-- Local storage to persist todo items
+- **Add New Todo Items:** Enter a new todo item and press the "Add" button to add it to the list.
+- **Edit Todo Items:** Click on the edit icon next to a todo item to edit its text.
+- **Delete Todo Items:** Click on the delete icon next to a todo item to remove it from the list.
+- **Mark Todo Items as Completed:** Check the checkbox next to a todo item to mark it as completed. The completed todo items are visually distinguished with a line-through style.
 
 ## Technologies Used
 
-- React
-- Tailwind CSS
+- **React:** JavaScript library for building user interfaces.
+- **Tailwind CSS:** Utility-first CSS framework for styling web applications.
+
 
 ## Getting Started
 
@@ -47,7 +45,8 @@ npm start
 
 ## Screenshots
 
-![Todo App Screenshot](/screenshots/todo-app.png)
+![Screenshot](https://github.com/juned072/React-Todo-app-/assets/146713870/6d0ee7ee-5600-474a-9a4b-1229621cd050)
+
 
 ## Contributing
 
