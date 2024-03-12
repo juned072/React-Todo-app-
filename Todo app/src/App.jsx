@@ -16,13 +16,17 @@ const App = () => {
   }, [task]);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const newTask = {
-      id: Math.floor(Math.random() * 10000),
-      todo: addText,
-    };
-    handleAddData(newTask);
-    setAddText("");
+  e.preventDefault();
+    if (addText === "") {
+      alert("please fill the input!");
+    } else {
+      const newTask = {
+        id: Math.floor(Math.random() * 10000),
+        todo: addText,
+      };
+      handleAddData(newTask);
+      setAddText("");
+    }
   };
 
   const handleAddData = (newTask) => {
