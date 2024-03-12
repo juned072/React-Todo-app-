@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import Input from "./components/Input";
 import Result from "./components/Result";
 
@@ -16,9 +17,9 @@ const App = () => {
   }, [task]);
 
   const handleSubmit = (e) => {
-  e.preventDefault();
+    e.preventDefault();
     if (addText === "") {
-      alert("please fill the input!");
+      toast.error("Please fill the input!");
     } else {
       const newTask = {
         id: Math.floor(Math.random() * 10000),
@@ -31,15 +32,18 @@ const App = () => {
 
   const handleAddData = (newTask) => {
     setTask([...task, newTask]);
+    toast.success("Task Added");
   };
 
   const handleDeletTodo = (id) => {
     const updatedTodo = task.filter((item) => item.id !== id);
     setTask(updatedTodo);
+    toast.success("Task deleted Successfully");
   };
 
   return (
     <div className="bg-sky-950 min-h-screen">
+      <Toaster />
       <div className="flex justify-center items-center ">
         <div className="md:mt-10 mt-5 md:w-[500px] w-80">
           <h1 className="font-semibold text-xl text-center text-white mb-8">
